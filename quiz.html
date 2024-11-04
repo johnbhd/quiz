@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        label {
+            display: block;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #score {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #flappybird-btn {
+            display: none; /* Hide by default */
+            margin-top: 20px;
+            background-color: #ff5722;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        h3 {
+            color: #5249aa;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>ITC - 112 Mock Quiz</h1>
+        <h3>Pass the quiz to play <strong><i>FlappyBirdy</i></strong></h3>
+        
+        <!-- Topic Selection Dropdown -->
+        <label for="topic-select">Select Quiz Topic:</label>
+        <select id="topic-select" onchange="loadQuestions()">
+            <option value="">--Choose a topic--</option>
+            <option value="function">Function</option>
+            <option value="simplicity">Simplicity</option>
+        </select>
+
+        <form id="quiz-form">
+            <section id="quiz-questions"></section>
+            <button type="button" onclick="calculateScore()">Submit</button>
+        </form>
+        <p id="score"></p>
+        <p id="correct-answers"></p> <!-- Placeholder for correct answers -->
+
+        <!-- Button to FlappyBirdy game -->
+        <button id="flappybird-btn" onclick="window.location.href='flappyb/flappybirdy.html'">Play FlappyBirdy</button>
+    </div>
+
+    <script>
+        let questionsArray = []; // To store questions with correct answers
+
+        async function loadQuestions() {
+            const topic = document.getElementById('topic-select').value;
+            if (!topic) return; // Exit if no topic is selected
+            
+            const filePath = `json/${topic}.json`;
+
+            // Fetch the JSON data
+            try {
+                const response = await fetch(filePath);
+                const data = await response.json();
+
+                // Shuffle and display questions
+                questionsArray = shuffleArray(data.questions);
+                displayQuestions(questionsArray.slice(0, 20)); // Limit to 20 questions
+            } catch (error) {
+                console.error('Error loading quiz data:', error);
+            }
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array; // Return the shuffled array
+        }
+
+        function displayQuestions(selectedQuestions) {
+            const quizQuestions = document.getElementById('quiz-questions');
+            quizQuestions.innerHTML = ''; // Clear previous questions
+
+            selectedQuestions.forEach((q, index) => {
+                const shuffledOptions = shuffleArray([...q.options]); // Shuffle the options
+
+                const questionHTML = `
+                    <div class="question" id="${q.id}">
+                        <p>${index + 1}. ${q.question}</p>
+                        ${shuffledOptions.map((option) =>
+                            `<label><input type="radio" name="${q.id}" value="${option === q.answer ? 'correct' : 'incorrect'}"> ${option}</label>`
+                        ).join('')}
+                    </div>
+                `;
+                quizQuestions.innerHTML += questionHTML;
+            });
+        }
+
+        function calculateScore() {
+            let score = 0;
+            let correctAnswersText = ''; // To hold correct answers
+
+            questionsArray.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="${q.id}"]:checked`);
+                if (selected && selected.value === 'correct') {
+                    score++;
+                } else {
+                    correctAnswersText += `<strong>${index + 1}. ${q.question}:</strong> Correct answer is "${q.answer}"<br>`;
+                }
+            });
+
+            document.getElementById('score').innerText = `Your score is ${score} out of ${questionsArray.length}`;
+            document.getElementById('correct-answers').innerHTML = correctAnswersText; // Display correct answers with numbering
+            
+            // Show the "Play FlappyBirdy" button if the score is 10 or above
+            const flappybirdBtn = document.getElementById('flappybird-btn');
+            if (score >= 10) {
+                flappybirdBtn.style.display = 'block';
+            } else {
+                flappybirdBtn.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

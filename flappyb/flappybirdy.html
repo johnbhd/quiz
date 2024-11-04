@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flappy Birdy</title>
+	<style>
+		body {
+			margin: 0;
+			font-family: 'Courier New', Courier, monospace;
+			text-align: center;
+			background-color: #70c5ce;
+			overflow: hidden;
+		}
+		canvas {
+			display: block;
+			width: 100vw;
+			height: 100vh;
+			background-image: url('flappybirdbg.png');
+			background-size: cover;
+		}
+		#title, #score {
+			position: absolute;
+			color: white;
+			font-size: 2vw;
+			margin: 10px;
+		}
+		#title {
+			top: 10px;
+			left: 10px;
+		}
+		#score {
+			top: 10px;
+			right: 10px;
+		}
+		@media (max-width: 768px) {
+			#title, #score {
+				font-size: 4vw;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="title">Flappy Birdy</div>
+	<div id="score">Score: 0 | High Score: 0</div>
+	<canvas id="board"></canvas>
+	<script>
+		// Canvas setup
+		let board = document.getElementById("board");
+		let context = board.getContext("2d");
+		let boardWidth = window.innerWidth;
+		let boardHeight = window.innerHeight;
+		board.width = boardWidth;
+		board.height = boardHeight;
+
+		// Bird settings
+		let birdWidth = 34;
+		let birdHeight = 34;
+		let birdX = boardWidth / 8;
+		let birdY = boardHeight / 2;
+
+		// Randomly select a bird image from img1 to img8
+		let birdImages = ["img/img1.png", "img/img2.png", "img/img3.png", "img/img4.png", "img/img5.png", "img/img6.png", "img/img7.png", "img/img8.png", "img/img9.png", "img/img10.png", "img/img11.png", "img/img12.png"];
+		let randomBirdImage = birdImages[Math.floor(Math.random() * birdImages.length)];
+		let birdImg = new Image();
+		birdImg.src = randomBirdImage;
+
+		let velocityY = 0;
+		let gravity = 0.3;
+		let bird = { x: birdX, y: birdY, width: birdWidth, height: birdHeight };
+
+		// Pipes
+		let pipeArray = [];
+		let pipeWidth = 64;
+		let pipeHeight = 512;
+		let pipeX = boardWidth;
+		let pipeY = 0;
+		let topPipeImg = new Image();
+		topPipeImg.src = "toppipe.png";
+		let bottomPipeImg = new Image();
+		bottomPipeImg.src = "bottompipe.png";
+		let velocityX = -3;
+
+		// Game state
+		let gameOver = false;
+		let score = 0;
+		let highScore = localStorage.getItem('highScore') ? parseInt(localStorage.getItem('highScore')) : 0;
+
+		// Start the game loop
+		window.onload = function() {
+			requestAnimationFrame(update);
+			setInterval(placePipes, 1500); // 1.5 seconds
+			document.addEventListener("keydown", moveBird);
+			document.addEventListener("touchstart", moveBird); // Touch control for mobile
+			document.addEventListener("click", moveBird); // Mouse click control
+			updateScoreDisplay();
+		};
+
+		// Update game frame
+		function update() {
+			requestAnimationFrame(update);
+			if (gameOver) return;
+
+			context.clearRect(0, 0, board.width, board.height);
+
+			// Bird physics
+			velocityY += gravity;
+			bird.y = Math.max(bird.y + velocityY, 0);
+			context.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
+
+			// Game over if bird hits the ground
+			if (bird.y > board.height) {
+				gameOver = true;
+				updateHighScore();
+			}
+
+			// Pipes
+			for (let i = 0; i < pipeArray.length; i++) {
+				let pipe = pipeArray[i];
+				pipe.x += velocityX;
+				context.drawImage(pipe.img, pipe.x, pipe.y, pipe.width, pipe.height);
+
+				// Add score
+				if (!pipe.passed && bird.x > pipe.x + pipe.width) {
+					score += 0.5;
+					pipe.passed = true;
+				}
+
+				// Collision detection
+				if (detectCollision(bird, pipe)) {
+					gameOver = true;
+					updateHighScore();
+				}
+			}
+
+			// Remove pipes that go out of view
+			while (pipeArray.length > 0 && pipeArray[0].x < -pipeWidth) {
+				pipeArray.shift();
+			}
+
+			// Update score display
+			updateScoreDisplay();
+		}
+
+		// Place new pipes
+		function placePipes() {
+			if (gameOver) return;
+
+			let randomPipeY = pipeY - pipeHeight / 4 - Math.random() * (pipeHeight / 2);
+			let openingSpace = board.height / 4;
+
+			let topPipe = {
+				img: topPipeImg,
+				x: pipeX,
+				y: randomPipeY,
+				width: pipeWidth,
+				height: pipeHeight,
+				passed: false
+			};
+			pipeArray.push(topPipe);
+
+			let bottomPipe = {
+				img: bottomPipeImg,
+				x: pipeX,
+				y: randomPipeY + pipeHeight + openingSpace,
+				width: pipeWidth,
+				height: pipeHeight,
+				passed: false
+			};
+			pipeArray.push(bottomPipe);
+		}
+
+		// Bird jump function
+		function moveBird(e) {
+			if (e.code === "Space" || e.code === "ArrowUp" || e.type === "touchstart" || e.type === "click") {
+				velocityY = -6;
+
+				// Reset game on game over
+				if (gameOver) {
+					bird.y = birdY;
+					pipeArray = [];
+					score = 0;
+					gameOver = false;
+					velocityY = 0;
+				}
+			}
+		}
+
+		// Collision detection
+		function detectCollision(a, b) {
+			return a.x < b.x + b.width &&
+				a.x + a.width > b.x &&
+				a.y < b.y + b.height &&
+				a.y + a.height > b.y;
+		}
+
+		// Update score display
+		function updateScoreDisplay() {
+			document.getElementById("score").innerText = `Score: ${Math.floor(score)} | High Score: ${highScore}`;
+		}
+
+		// Update high score
+		function updateHighScore() {
+			if (score > highScore) {
+				highScore = Math.floor(score);
+				localStorage.setItem('highScore', highScore);
+			}
+		}
+
+		// Resize canvas if window is resized
+		window.addEventListener("resize", function() {
+			boardWidth = window.innerWidth;
+			boardHeight = window.innerHeight;
+			board.width = boardWidth;
+			board.height = boardHeight;
+		});
+	</script>
+</body>
+</html>

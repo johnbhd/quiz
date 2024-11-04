@@ -1,0 +1,225 @@
+{
+    "questions": [
+      {
+        "id": "1",
+        "question": "What is simplicity primarily defined as in design?",
+        "options": [
+          "A lack of color",
+          "Freedom from complexity",
+          "Maximizing content",
+          "Adding as many features as possible"
+        ],
+        "answer": "Freedom from complexity"
+      },
+      {
+        "id": "2",
+        "question": "What phrase is used to describe the approach of enhancing simplicity?",
+        "options": [
+          "Adding layers and styles",
+          "Removing key features",
+          "Subtracting the obvious, adding the meaningful",
+          "Ignoring unnecessary elements"
+        ],
+        "answer": "Subtracting the obvious, adding the meaningful"
+      },
+      {
+        "id": "3",
+        "question": "According to a 2002 poll, what percentage of users prioritize ease of use?",
+        "options": [
+          "50%",
+          "67%",
+          "87%",
+          "95%"
+        ],
+        "answer": "87%"
+      },
+      {
+        "id": "4",
+        "question": "What is the primary purpose of simplicity in design?",
+        "options": [
+          "To make products look visually pleasing",
+          "To focus on the core purpose and clarity of a product",
+          "To add as many features as possible",
+          "To ensure uniqueness in design"
+        ],
+        "answer": "To focus on the core purpose and clarity of a product"
+      },
+      {
+        "id": "5",
+        "question": "What is 'progressive disclosure'?",
+        "options": [
+          "Showing all features at once",
+          "A method to gradually reveal information",
+          "Hiding key information from users",
+          "Adding excessive information at the start"
+        ],
+        "answer": "A method to gradually reveal information"
+      },
+      {
+        "id": "6",
+        "question": "How can a designer ensure clarity?",
+        "options": [
+          "By using complicated layouts",
+          "By removing distractions and unnecessary features",
+          "By adding more color and detail",
+          "By overloading with information"
+        ],
+        "answer": "By removing distractions and unnecessary features"
+      },
+      {
+        "id": "7",
+        "question": "What is an essential aspect of simplicity in design?",
+        "options": [
+          "Overly detailed graphics",
+          "Minimalism and focus on user needs",
+          "Complex user journeys",
+          "Using many fonts and colors"
+        ],
+        "answer": "Minimalism and focus on user needs"
+      },
+      {
+        "id": "8",
+        "question": "What is the best way to test for simplicity?",
+        "options": [
+          "User testing with minimal distractions",
+          "Complicated feedback forms",
+          "Focusing on technical elements",
+          "Ignoring user feedback"
+        ],
+        "answer": "User testing with minimal distractions"
+      },
+      {
+        "id": "9",
+        "question": "Which principle should a designer follow to achieve simplicity?",
+        "options": [
+          "Design for aesthetics only",
+          "Focus on reducing the number of steps",
+          "Include every feature in the design",
+          "Maximize the amount of text used"
+        ],
+        "answer": "Focus on reducing the number of steps"
+      },
+      {
+        "id": "10",
+        "question": "What is the main idea behind the 'KISS' principle?",
+        "options": [
+          "Keep It Simple, Stupid",
+          "Kindly Interact with Simple Solutions",
+          "Knowledge Is Simply Shared",
+          "Keen Ideas Solve Simplistically"
+        ],
+        "answer": "Keep It Simple, Stupid"
+      },
+      {
+        "id": "11",
+        "question": "Which design element is often simplified?",
+        "options": [
+          "Graphics and illustrations",
+          "Textual content",
+          "Navigation structures",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "id": "12",
+        "question": "What impact does simplicity have on user experience?",
+        "options": [
+          "It complicates the user journey",
+          "It can improve user satisfaction and efficiency",
+          "It reduces user engagement",
+          "It makes products less accessible"
+        ],
+        "answer": "It can improve user satisfaction and efficiency"
+      },
+      {
+        "id": "13",
+        "question": "How can the designer assess simplicity in their work?",
+        "options": [
+          "By gathering user feedback",
+          "By focusing only on their opinions",
+          "By avoiding user testing",
+          "By ignoring complexity"
+        ],
+        "answer": "By gathering user feedback"
+      },
+      {
+        "id": "14",
+        "question": "Which feature should be minimized to enhance simplicity?",
+        "options": [
+          "Navigation options",
+          "Visual clutter",
+          "Color choices",
+          "Text length"
+        ],
+        "answer": "Visual clutter"
+      },
+      {
+        "id": "15",
+        "question": "How can a designer promote simplicity?",
+        "options": [
+          "By encouraging complex layouts",
+          "By focusing on clarity and user-centric design",
+          "By minimizing feedback mechanisms",
+          "By ignoring user needs"
+        ],
+        "answer": "By focusing on clarity and user-centric design"
+      },
+      {
+        "id": "16",
+        "question": "What role does whitespace play in design?",
+        "options": [
+          "It complicates the layout",
+          "It helps separate elements and enhances readability",
+          "It should be avoided in all designs",
+          "It adds unnecessary space"
+        ],
+        "answer": "It helps separate elements and enhances readability"
+      },
+      {
+        "id": "17",
+        "question": "What type of content should be prioritized for clarity?",
+        "options": [
+          "Less important information",
+          "Core messages and calls to action",
+          "All information equally",
+          "Only decorative content"
+        ],
+        "answer": "Core messages and calls to action"
+      },
+      {
+        "id": "18",
+        "question": "Which approach is recommended for effective simplicity?",
+        "options": [
+          "Overloading users with choices",
+          "Gradual reveal of content",
+          "Providing too much information at once",
+          "Relying solely on visuals"
+        ],
+        "answer": "Gradual reveal of content"
+      },
+      {
+        "id": "19",
+        "question": "What effect does simplicity have on brand perception?",
+        "options": [
+          "It complicates the brand message",
+          "It enhances clarity and trust",
+          "It makes the brand less memorable",
+          "It reduces user interaction"
+        ],
+        "answer": "It enhances clarity and trust"
+      },
+      {
+        "id": "20",
+        "question": "What is a common mistake when designing for simplicity?",
+        "options": [
+          "Ignoring user feedback",
+          "Prioritizing user needs",
+          "Focusing on aesthetic details",
+          "Simplifying navigation"
+        ],
+        "answer": "Ignoring user feedback"
+      }
+    ]
+  }
+  

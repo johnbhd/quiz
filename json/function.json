@@ -1,0 +1,225 @@
+{
+    "questions": [
+      {
+        "id": "1",
+        "question": "What is the primary purpose of function in graphic design?",
+        "options": [
+          "To make designs visually appealing",
+          "To meet practical objectives and communicate effectively",
+          "To use as many design elements as possible",
+          "To increase complexity for aesthetic impact"
+        ],
+        "answer": "To meet practical objectives and communicate effectively"
+      },
+      {
+        "id": "2",
+        "question": "What additional element could strengthen the Introduction section?",
+        "options": [
+          "More images",
+          "Examples contrasting different design purposes",
+          "A longer paragraph",
+          "Statistics about design"
+        ],
+        "answer": "Examples contrasting different design purposes"
+      },
+      {
+        "id": "3",
+        "question": "Which term describes a document outlining client needs for a project?",
+        "options": [
+          "Style guide",
+          "Design mockup",
+          "Design brief",
+          "Project blueprint"
+        ],
+        "answer": "Design brief"
+      },
+      {
+        "id": "4",
+        "question": "What is recommended to improve the 'Components of a Good Design Brief' section?",
+        "options": [
+          "Adding images of design briefs",
+          "Providing an example design brief",
+          "Removing details about design briefs",
+          "Limiting information about each component"
+        ],
+        "answer": "Providing an example design brief"
+      },
+      {
+        "id": "5",
+        "question": "What is one characteristic of effective creative design?",
+        "options": [
+          "It should look complex and detailed",
+          "It should be memorable, clear, and credible",
+          "It should be only visually appealing",
+          "It must use multiple fonts"
+        ],
+        "answer": "It should be memorable, clear, and credible"
+      },
+      {
+        "id": "6",
+        "question": "Which benefit of creative design was highlighted in the document?",
+        "options": [
+          "Encouraging minimal user engagement",
+          "Increasing brand identity and customer attention",
+          "Reducing customer interactions",
+          "Improving software functionality"
+        ],
+        "answer": "Increasing brand identity and customer attention"
+      },
+      {
+        "id": "7",
+        "question": "What could enhance the impact of the 'Creative Design' section?",
+        "options": [
+          "Examples of creative design that align with brand goals",
+          "A detailed description of visual elements",
+          "Limiting the explanation of creativity",
+          "Incorporating technical jargon"
+        ],
+        "answer": "Examples of creative design that align with brand goals"
+      },
+      {
+        "id": "8",
+        "question": "In which way could the 'Advantages of Creative Design' section be improved?",
+        "options": [
+          "Add case studies of brands using creative design effectively",
+          "Remove the section entirely",
+          "Use technical diagrams",
+          "Focus only on online designs"
+        ],
+        "answer": "Add case studies of brands using creative design effectively"
+      },
+      {
+        "id": "9",
+        "question": "What does functional design prioritize?",
+        "options": [
+          "Visual complexity",
+          "Clear communication and usability",
+          "Aesthetic creativity over functionality",
+          "High levels of interactivity"
+        ],
+        "answer": "Clear communication and usability"
+      },
+      {
+        "id": "10",
+        "question": "What addition is recommended for the 'Functional Design' section?",
+        "options": [
+          "Examples of complex design",
+          "Discussion of user-focused techniques for accessibility",
+          "Only images of functional websites",
+          "Extra paragraphs on typography"
+        ],
+        "answer": "Discussion of user-focused techniques for accessibility"
+      },
+      {
+        "id": "11",
+        "question": "Why is balancing creative and functional design important?",
+        "options": [
+          "It makes designs more visually complex",
+          "It ensures that designs are both usable and engaging",
+          "It reduces the need for creativity",
+          "It removes the need for client feedback"
+        ],
+        "answer": "It ensures that designs are both usable and engaging"
+      },
+      {
+        "id": "12",
+        "question": "What practical advice would improve the final section?",
+        "options": [
+          "Including tips for integrating both creative and functional design",
+          "Adding more on aesthetic complexity",
+          "Only focusing on creative aspects",
+          "Removing all examples"
+        ],
+        "answer": "Including tips for integrating both creative and functional design"
+      },
+      {
+        "id": "13",
+        "question": "Which of these was NOT suggested as a general improvement?",
+        "options": [
+          "Add more images and visual elements",
+          "Provide more real-world examples",
+          "Include technical terminology",
+          "Add practical applications for designers"
+        ],
+        "answer": "Include technical terminology"
+      },
+      {
+        "id": "14",
+        "question": "What is one benefit of using real-world examples in the document?",
+        "options": [
+          "Increases complexity",
+          "Illustrates principles in a practical context",
+          "Reduces the length of the document",
+          "Limits the amount of information shared"
+        ],
+        "answer": "Illustrates principles in a practical context"
+      },
+      {
+        "id": "15",
+        "question": "What type of information should be highlighted in the Introduction?",
+        "options": [
+          "Key terms like 'objective' and 'target audience'",
+          "Only technical aspects",
+          "Less relevant terms",
+          "Only artistic concepts"
+        ],
+        "answer": "Key terms like 'objective' and 'target audience'"
+      },
+      {
+        "id": "16",
+        "question": "Which element could make the 'Components of a Good Design Brief' section stronger?",
+        "options": [
+          "Less detail about each part",
+          "Examples showing the impact on design",
+          "Focus on more client requirements",
+          "Adding general design principles"
+        ],
+        "answer": "Examples showing the impact on design"
+      },
+      {
+        "id": "17",
+        "question": "How can the 'Creative Design' section be made more engaging?",
+        "options": [
+          "Limit descriptions of design principles",
+          "Include visuals showing memorable designs",
+          "Only focus on theoretical aspects",
+          "Make it longer without adding examples"
+        ],
+        "answer": "Include visuals showing memorable designs"
+      },
+      {
+        "id": "18",
+        "question": "What could strengthen the overall readability of the document?",
+        "options": [
+          "Adding more subheadings and visual elements",
+          "Using fewer paragraphs",
+          "Adding more text without organization",
+          "Only focusing on grammar"
+        ],
+        "answer": "Adding more subheadings and visual elements"
+      },
+      {
+        "id": "19",
+        "question": "What does the document recommend about creativity in functional design?",
+        "options": [
+          "It should not be visually appealing",
+          "It should adhere to functional goals",
+          "It must avoid brand coherence",
+          "It should be completely separate from usability"
+        ],
+        "answer": "It should adhere to functional goals"
+      },
+      {
+        "id": "20",
+        "question": "Why would a balanced design affect conversion rates?",
+        "options": [
+          "It makes designs more visually complex",
+          "It supports a satisfying user experience",
+          "It limits interactivity",
+          "It reduces customer retention"
+        ],
+        "answer": "It supports a satisfying user experience"
+      }
+    ]
+  }
+  
